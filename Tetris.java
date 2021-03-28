@@ -21,4 +21,12 @@ public class Tetris {
     public static void main(String[] args) {
 
     }
+
+    // отвечает за всю игру
+    public void run() {
+    }
+
+    // отвечает за один шаг в игре
+    public void step() {
+    }
 }
