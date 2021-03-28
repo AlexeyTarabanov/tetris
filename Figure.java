@@ -29,4 +29,28 @@ public class Figure {
         this.y = y;
         this.matrix = matrix;
     }
+
+    // для движения фигурки влево/вправо/вверх/вниз
+    public void left() {}
+
+    public void right() {}
+
+    public void down() {}
+
+    public void up() {}
+
+    // для поворота фигурки вокруг главной диагонали
+    public void rotate() {}
+
+    // падение фигурки вниз до дна
+    public void downMaximum() {}
+
+    // проверка - может ли фигурка быть помещена в текущую позицию
+    public boolean isCurrentPositionAvailable() {
+        return true;
+    }
+
+    // вызывается, когда фигурка достигла дна или уперлась в другую фигурку
+    // (все ее занятые клетки теперь должны добавиться в Field)
+    public void landed() {}
 }
