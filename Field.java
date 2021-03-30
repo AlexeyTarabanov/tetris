@@ -1,5 +1,7 @@
 package com.javarush.task.task22.task2213;
 
+import java.util.ArrayList;
+
 /**
  * Класс отвечающий за поле с клетками.
  * Он будет отвечать за хранение данных о текущих занятых и свободных клетках на поле игры.
@@ -47,7 +49,32 @@ public class Field {
     }
 
     // будет удалять из матрицы полностью заполненные строки и сдвигать вышележащие строки вниз
-    public void removeFullLines() {}
+    public void removeFullLines() {
+        //Создаем список для хранения линий
+        ArrayList<int[]> lines = new ArrayList<>();
+
+        //Копируем все неполные линии в список.
+        for (int i = 0; i < height; i++) {
+            //подсчитываем количество единиц в строке - просто суммируем все ее значения
+            int count = 0;
+            for (int j = 0; j < width; j++) {
+                count += matrix[i][j];
+            }
+
+            //Если сумма строки не равна ее ширине - добавляем в список
+            if (count != width) {
+                lines.add(matrix[i]);
+            }
+        }
+
+        //Добавляем недостающие строки в начало списка.
+        while (lines.size() < height) {
+            lines.add(0, new int[width]);
+        }
+
+        //Преобразуем список обратно в матрицу
+        matrix = lines.toArray(new int[height][width]);
+    }
 
     // устанавливает переданное значение в ячейку массива (матрицы) с координатами x, y
     public void setValue(int x, int y, int value) {}
