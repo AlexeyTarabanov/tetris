@@ -31,13 +31,25 @@ public class Figure {
     }
 
     // для движения фигурки влево/вправо/вверх/вниз
-    public void left() {}
+    public void left() {
+        if (isCurrentPositionAvailable()) {
+            x--;
+        }
+    }
 
-    public void right() {}
+    public void right() {
+        if (isCurrentPositionAvailable()) {
+            x++;
+        }
+    }
 
-    public void down() {}
+    public void down() {
+        y++;
+    }
 
-    public void up() {}
+    public void up() {
+        y--;
+    }
 
     // для поворота фигурки вокруг главной диагонали
     public void rotate() {}
