@@ -77,7 +77,7 @@ public class Tetris {
     }
 
     public void step() {
-        //опускам фигурку вниз
+        //опускаем фигурку вниз
         figure.down();
 
         //если разместить фигурку на текущем месте невозможно
@@ -85,7 +85,7 @@ public class Tetris {
             figure.up();                    //поднимаем обратно
             figure.landed();                //приземляем
 
-            isGameOver = figure.getY() <= 1;//если фигурка приземлилась на самом верху - игра окончена
+            isGameOver = figure.getY() <= 1; //если фигурка приземлилась на самом верху - игра окончена
 
             field.removeFullLines();        //удаляем заполненные линии
 
